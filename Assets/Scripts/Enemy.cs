@@ -1,8 +1,8 @@
+using System;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    public MoveMarkers markers;
     public float speed = 10.0f;
 
     private Transform _currentMarker;
@@ -13,18 +13,23 @@ public class Enemy : MonoBehaviour
     {
         _mIndex ++;
 
-        _currentMarker = markers.GetMarkerList()[_mIndex];
+        _currentMarker = WaveSpawner.GetMarkerList()[_mIndex];
         _direction = _currentMarker.position - transform.position;
         _direction.Normalize();
+    }
+
+    private void Start()
+    {
+        ChangeMarker();
     }
 
     private void Update()
     {
         transform.Translate(_direction * (speed * Time.deltaTime), Space.World);
 
-        if (Vector3.Distance(transform.position, markers.GetMarkerList()[_mIndex].position) < 0.3f)
+        if (Vector3.Distance(transform.position, _currentMarker.position) < 0.3f)
         {
-            if (_mIndex < markers.GetMarkerList().Length - 1)
+            if (_mIndex < WaveSpawner.GetMarkerList().Length - 1)
                 ChangeMarker();
             else
                 Destroy(gameObject);
