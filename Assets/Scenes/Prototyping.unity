@@ -3652,7 +3652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   markers: {fileID: 1042114603}
-  speed: 10
+  speed: 20
 --- !u!1 &411502616
 GameObject:
   m_ObjectHideFlags: 0
