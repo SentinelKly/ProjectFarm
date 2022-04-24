@@ -1,4 +1,6 @@
+using System;
 using System.Collections;
+using TMPro;
 using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
@@ -11,6 +13,10 @@ public class WaveSpawner : MonoBehaviour
 	public GameObject enemyPrefab;
 	public Transform enemySpawn;
 
+	[Header("UI Fields")] 
+	public TMP_Text waveCounter;
+	public TMP_Text waveTimer;
+
 	private float _timeUntilWave = 5.0f;
 	private int _waveCount;
 
@@ -20,7 +26,7 @@ public class WaveSpawner : MonoBehaviour
 	{
 		return _markerList;
 	}
-	
+
 	private void Awake()
 	{
 		_markerList = new Transform[transform.childCount];
@@ -45,6 +51,10 @@ public class WaveSpawner : MonoBehaviour
 		}
 
 		_timeUntilWave -= Time.deltaTime;
+
+		String waves = (totalWaves > 0) ? totalWaves.ToString() : "∞";
+		waveCounter.text = $"Wave: {_waveCount} / {waves}";
+		waveTimer.text = $"Next wave in: {Mathf.RoundToInt(_timeUntilWave)} sec(s)";
 	}
 
 	IEnumerator SpawnEnemies(int count)
