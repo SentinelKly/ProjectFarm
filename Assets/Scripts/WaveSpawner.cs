@@ -46,7 +46,7 @@ public class WaveSpawner : MonoBehaviour
 				_timeUntilWave = waveDelay;
 				_waveCount++;
 				
-				StartCoroutine(SpawnEnemies((int) Mathf.Pow(_waveCount, 1.15f) + 1));
+				StartCoroutine(SpawnEnemies((int) Mathf.Pow(_waveCount, 1.10f) + 1));
 			}
 		}
 

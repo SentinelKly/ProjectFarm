@@ -9342,9 +9342,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   totalWaves: 0
-  waveDelay: 5
+  waveDelay: 10
   enemyPrefab: {fileID: 2966412479998441788, guid: 824881c2beb31204897986e54484a4c0, type: 3}
   enemySpawn: {fileID: 251177093}
+  waveCounter: {fileID: 996553700}
+  waveTimer: {fileID: 1752385682}
 --- !u!1 &1042211221
 GameObject:
   m_ObjectHideFlags: 0
