@@ -3,9 +3,11 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+	[Header("Numeric Modifiers")]
 	public int totalWaves;
 	public float waveDelay = 5.0f;
 	
+	[Header("Object References")]
 	public GameObject enemyPrefab;
 	public Transform enemySpawn;
 
