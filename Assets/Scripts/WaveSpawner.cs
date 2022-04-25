@@ -62,7 +62,7 @@ public class WaveSpawner : MonoBehaviour
 		for (int i = 0; i < count; i++)
 		{
 			Instantiate(enemyPrefab, enemySpawn.position, Quaternion.identity);
-			yield return new WaitForSeconds(0.2f);
+			yield return new WaitForSeconds(0.3f);
 		}
 	}
 }

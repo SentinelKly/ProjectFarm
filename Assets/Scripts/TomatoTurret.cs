@@ -2,22 +2,25 @@ using UnityEngine;
 
 public class TomatoTurret : MonoBehaviour
 {
+	public GameObject bulletPrefab;
+	public Transform bulletSpawner;
 	public float targetRange = 15f;
 	public float lockOnSpeed = 8f;
+	public float rateOfFire = 1f;
+
 	private GameObject _currentTarget;
-	private Vector3 _defaultPos;
+	private float _fireDelay = 0f;
 
 	private void Start()
 	{
-		_defaultPos = transform.position;
 		InvokeRepeating(nameof(UpdateTarget), 0f, 0.5f);
 	}
 
 	private void UpdateTarget()
 	{
-		GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+		var enemies = GameObject.FindGameObjectsWithTag("Enemy");
 		GameObject closestEnemy = null;
-		float closestDistance = Mathf.Infinity;
+		var closestDistance = Mathf.Infinity;
 
 		foreach (var enemy in enemies)
 		{
@@ -41,22 +44,29 @@ public class TomatoTurret : MonoBehaviour
 
 	private void Update()
 	{
-		Vector3 turretDir;
-		
 		if (!_currentTarget)
-		{
-			turretDir = _defaultPos;
-		}
-		
-		else
-		{
-			turretDir = _currentTarget.transform.position - transform.position;
-		}
-		
-		Quaternion lookRotation = Quaternion.LookRotation(turretDir);
-		Vector3 rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * lockOnSpeed).eulerAngles;
+			return;
+
+		var turretDir = _currentTarget.transform.position - transform.position;
+		var lookRotation = Quaternion.LookRotation(turretDir);
+		var rotation = Quaternion.Lerp(transform.rotation, lookRotation, Time.deltaTime * lockOnSpeed).eulerAngles;
 		
 		transform.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+		
+		if (_fireDelay <= 0f)
+		{
+			FireAtEnemy();
+			_fireDelay = 1f / rateOfFire;
+		}
+
+		_fireDelay -= Time.deltaTime;
+	}
+
+	private void FireAtEnemy()
+	{
+		var bulletObj = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
+		var bullet = bulletObj.GetComponent<Bullet>();
+		bullet.SetParams(_currentTarget.transform, 30f);
 	}
 
 	private void OnDrawGizmosSelected()
