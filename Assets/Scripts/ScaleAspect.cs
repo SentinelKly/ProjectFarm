@@ -24,8 +24,6 @@ public class ScaleAspect : MonoBehaviour
 		var resolution = Screen.currentResolution;
 		var renderX = resolution.width / 3;
 		var renderY = resolution.height / 3;
-		
-		print($"{renderX}, {renderY}");
 
 		_renderTex = new RenderTexture(renderX, renderY, 32, GraphicsFormat.R8G8B8A8_UNorm)
 		{
