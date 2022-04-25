@@ -17,6 +17,8 @@ public class WaveSpawner : MonoBehaviour
 	public TMP_Text waveCounter;
 	public TMP_Text waveTimer;
 
+	public bool active = true;
+
 	private float _timeUntilWave = 5.0f;
 	private int _waveCount;
 
@@ -39,18 +41,21 @@ public class WaveSpawner : MonoBehaviour
 
 	private void Update()
 	{
-		if (_timeUntilWave <= 0)
+		if (active)
 		{
-			if (_waveCount < totalWaves || totalWaves == 0)
+			if (_timeUntilWave <= 0)
 			{
-				_timeUntilWave = waveDelay;
-				_waveCount++;
+				if (_waveCount < totalWaves || totalWaves == 0)
+				{
+					_timeUntilWave = waveDelay;
+					_waveCount++;
 				
-				StartCoroutine(SpawnEnemies((int) Mathf.Pow(_waveCount, 1.10f) + 1));
+					StartCoroutine(SpawnEnemies((int) Mathf.Pow(_waveCount, 1.05f) + 1));
+				}
 			}
-		}
 
-		_timeUntilWave -= Time.deltaTime;
+			_timeUntilWave -= Time.deltaTime;
+		}
 
 		String waves = (totalWaves > 0) ? totalWaves.ToString() : "∞";
 		waveCounter.text = $"Wave: {_waveCount} / {waves}";

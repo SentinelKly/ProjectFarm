@@ -9347,6 +9347,7 @@ MonoBehaviour:
   enemySpawn: {fileID: 251177093}
   waveCounter: {fileID: 996553700}
   waveTimer: {fileID: 1752385682}
+  active: 0
 --- !u!1 &1042211221
 GameObject:
   m_ObjectHideFlags: 0
