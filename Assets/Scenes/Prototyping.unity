@@ -1442,7 +1442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   generalSprite: {fileID: 21300000, guid: 4b33c136840929f4fa694a0e1ff5329b, type: 3}
   healthSlider: {fileID: 953508085}
-  dialogueOnLoad: 0
+  dialogueOnLoad: 1
 --- !u!1 &134445966
 GameObject:
   m_ObjectHideFlags: 0
@@ -9650,6 +9650,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalWaves: 0
   waveDelay: 10
+  timeBetweenEnemies: 0.4
   enemyPrefab: {fileID: 2966412479998441788, guid: 824881c2beb31204897986e54484a4c0, type: 3}
   enemySpawn: {fileID: 251177093}
   waveCounter: {fileID: 996553700}

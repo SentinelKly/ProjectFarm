@@ -8,6 +8,7 @@ public class WaveSpawner : MonoBehaviour
 	[Header("Numeric Modifiers")]
 	public int totalWaves;
 	public float waveDelay = 5.0f;
+	public float timeBetweenEnemies = 0.5f;
 	
 	[Header("Object References")]
 	public GameObject enemyPrefab;
@@ -69,7 +70,7 @@ public class WaveSpawner : MonoBehaviour
 		for (int i = 0; i < count; i++)
 		{
 			Instantiate(enemyPrefab, enemySpawn.position, Quaternion.identity);
-			yield return new WaitForSeconds(0.45f);
+			yield return new WaitForSeconds(timeBetweenEnemies);
 		}
 	}
 }

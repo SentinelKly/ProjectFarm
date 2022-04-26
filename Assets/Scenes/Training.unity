@@ -1173,7 +1173,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   totalWaves: 0
   waveDelay: 10
-  enemyPrefab: {fileID: 2966412479998441788, guid: 824881c2beb31204897986e54484a4c0, type: 3}
+  timeBetweenEnemies: 0.5
+  enemyPrefab: {fileID: 2966412479998441788, guid: d8e75bfd4e3a7e641b7897fada25753d, type: 3}
   enemySpawn: {fileID: 675390404}
   waveCounter: {fileID: 1895016744}
   waveTimer: {fileID: 257365090}
@@ -1591,7 +1592,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 225859773728306128, guid: ad09dfaf3a709344a8f9ae8abccda805, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 225859773728306128, guid: ad09dfaf3a709344a8f9ae8abccda805, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2611,8 +2612,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1256784998}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -6.08, y: -0.4, z: 20.0799}
-  m_LocalScale: {x: 10, y: 1, z: 159.40245}
+  m_LocalPosition: {x: -6, y: -0.4, z: 20}
+  m_LocalScale: {x: 10, y: 1, z: 160}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 721085903}
@@ -3241,7 +3242,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 225859773728306128, guid: ad09dfaf3a709344a8f9ae8abccda805, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 225859773728306128, guid: ad09dfaf3a709344a8f9ae8abccda805, type: 3}
       propertyPath: m_LocalPosition.z
