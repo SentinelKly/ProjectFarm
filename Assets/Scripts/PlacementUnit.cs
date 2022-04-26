@@ -1,16 +1,26 @@
+using System;
 using UnityEngine;
 
 public class PlacementUnit : MonoBehaviour
 {
+	private static readonly int Color1 = Shader.PropertyToID("_Color");
+
+	private Material _plotMaterial;
+	private Color _defaultColour;
+
+	private void Start()
+	{
+		_plotMaterial = gameObject.GetComponent<Renderer>().material;
+		_defaultColour = _plotMaterial.GetColor(Color1);
+	}
+
 	private void OnMouseOver()
 	{
-		//gameObject.GetComponent<Renderer> ().material.color = Color.green;
-		gameObject.GetComponent<Renderer> ().material.SetColor("_Color", Color.green);
+		_plotMaterial.color = Color.green;
 	}
 
 	private void OnMouseExit()
 	{
-		//gameObject.GetComponent<Renderer> ().material.color = Color.white;
-		gameObject.GetComponent<Renderer> ().material.SetColor("_Color", Color.white);
+		_plotMaterial.color = _defaultColour;
 	}
 }
