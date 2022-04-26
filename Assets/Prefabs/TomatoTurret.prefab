@@ -245,9 +245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   bulletPrefab: {fileID: 6178842122525705883, guid: 7dedbcb1cb373a14f8b85986c7755236, type: 3}
   bulletSpawner: {fileID: 2946389561007981412}
-  targetRange: 16
+  targetRange: 10
   lockOnSpeed: 12
-  rateOfFire: 2
+  rateOfFire: 1.5
 --- !u!1 &3446375514346670011
 GameObject:
   m_ObjectHideFlags: 0
