@@ -5,6 +5,7 @@ public class LevelController : MonoBehaviour
 {
 	public Sprite generalSprite;
 	public Slider healthSlider;
+	public WaveSpawner spawner;
 	public bool dialogueOnLoad;
 	
 	private float _health = 100f;
@@ -17,6 +18,8 @@ public class LevelController : MonoBehaviour
 		
 		if (_health <= 0f)
 		{
+			spawner.ResetWaveSpawner();
+			
 			Speaker general = new Speaker()
 			{
 				name = "general",

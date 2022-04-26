@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class WaveSpawner : MonoBehaviour
 {
+	public static bool isReset = false;
+	
 	[Header("Numeric Modifiers")]
 	public int totalWaves;
 	public float waveDelay = 5.0f;
@@ -30,6 +32,13 @@ public class WaveSpawner : MonoBehaviour
 		return _markerList;
 	}
 
+	public void ResetWaveSpawner()
+	{
+		_timeUntilWave = 5.0f;
+		_waveCount = 0;
+		isReset = true;
+	}
+
 	private void Awake()
 	{
 		_markerList = new Transform[transform.childCount];
@@ -48,6 +57,8 @@ public class WaveSpawner : MonoBehaviour
 		{
 			if (_timeUntilWave <= 0)
 			{
+				isReset = false;
+				
 				if (_waveCount < totalWaves || totalWaves == 0)
 				{
 					_timeUntilWave = waveDelay;

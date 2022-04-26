@@ -26,6 +26,8 @@ public class Enemy : MonoBehaviour
 
     private void Update()
     {
+        if (WaveSpawner.isReset) Destroy(gameObject);
+        
         transform.Translate(_direction * (speed * Time.deltaTime), Space.World);
 
         if (Vector3.Distance(transform.position, _currentMarker.position) < 0.3f)
