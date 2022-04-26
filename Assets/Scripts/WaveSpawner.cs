@@ -17,7 +17,7 @@ public class WaveSpawner : MonoBehaviour
 	public TMP_Text waveCounter;
 	public TMP_Text waveTimer;
 
-	public bool active = true;
+	public bool active;
 
 	private float _timeUntilWave = 5.0f;
 	private int _waveCount;
@@ -41,6 +41,8 @@ public class WaveSpawner : MonoBehaviour
 
 	private void Update()
 	{
+		active = !Dialogue.IsEnabled;
+		
 		if (active)
 		{
 			if (_timeUntilWave <= 0)

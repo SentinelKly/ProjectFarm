@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - RenderCamera
+  - DialogueImage
+  - DialogueSpeaker
+  - DialogueText
   layers:
   - Default
   - TransparentFX

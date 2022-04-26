@@ -30,8 +30,15 @@ public class Enemy : MonoBehaviour
         {
             if (_mIndex < WaveSpawner.GetMarkerList().Length - 1)
                 ChangeMarker();
+
             else
+            {
+                var levelObject = GameObject.FindWithTag("Player");
+                var controller = levelObject.GetComponent<LevelController>();
+                controller.DealDamage(15f);
+                
                 Destroy(gameObject);
+            }
         }
     }
 }
