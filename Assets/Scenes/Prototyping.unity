@@ -1443,7 +1443,7 @@ MonoBehaviour:
   generalSprite: {fileID: 21300000, guid: 4b33c136840929f4fa694a0e1ff5329b, type: 3}
   healthSlider: {fileID: 953508085}
   spawner: {fileID: 1042114604}
-  dialogueOnLoad: 0
+  dialogueOnLoad: 1
 --- !u!1 &134445966
 GameObject:
   m_ObjectHideFlags: 0
