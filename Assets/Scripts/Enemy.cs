@@ -15,6 +15,8 @@ public class Enemy : MonoBehaviour
         _currentMarker = WaveSpawner.GetMarkerList()[_mIndex];
         _direction = _currentMarker.position - transform.position;
         _direction.Normalize();
+
+        transform.rotation = Quaternion.LookRotation(_direction);
     }
 
     private void Start()
