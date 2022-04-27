@@ -351,6 +351,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   renderImage: {fileID: 1147041904}
+  downScaler: 3
 --- !u!1 &128351188
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 public class ScaleAspect : MonoBehaviour
 {
 	public RawImage renderImage;
+	public float downScaler = 3f;
+	
 	private Camera _renderCamera;
 	private RenderTexture _renderTex;
 	private void Start()
@@ -22,10 +24,10 @@ public class ScaleAspect : MonoBehaviour
 		}
 
 		var resolution = Screen.currentResolution;
-		var renderX = resolution.width / 3;
-		var renderY = resolution.height / 3;
+		var renderX = resolution.width / downScaler;
+		var renderY = resolution.height / downScaler;
 
-		_renderTex = new RenderTexture(renderX, renderY, 32, GraphicsFormat.R8G8B8A8_UNorm)
+		_renderTex = new RenderTexture(Mathf.RoundToInt(renderX), Mathf.RoundToInt(renderY), 32, GraphicsFormat.R8G8B8A8_UNorm)
 		{
 			antiAliasing = 1,
 			filterMode = FilterMode.Point
