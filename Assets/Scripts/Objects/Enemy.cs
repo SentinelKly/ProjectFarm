@@ -1,3 +1,4 @@
+using Management;
 using UnityEngine;
 
 namespace Objects
@@ -28,7 +29,7 @@ namespace Objects
 
         private void Update()
         {
-            if (WaveSpawner.isReset) Destroy(gameObject);
+            if (WaveSpawner.IsReset) Destroy(gameObject);
         
             transform.Translate(_direction * (speed * Time.deltaTime), Space.World);
 

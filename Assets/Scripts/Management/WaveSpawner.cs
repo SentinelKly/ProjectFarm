@@ -3,86 +3,90 @@ using System.Collections;
 using TMPro;
 using UI;
 using UnityEngine;
+using Utils;
 
-public class WaveSpawner : MonoBehaviour
+namespace Management
 {
-	public static bool isReset = false;
-	
-	[Header("Numeric Modifiers")]
-	public int totalWaves;
-	public float waveDelay = 5.0f;
-	public float timeBetweenEnemies = 0.5f;
-	
-	[Header("Object References")]
-	public GameObject enemyPrefab;
-	public Transform enemySpawn;
-
-	[Header("UI Fields")] 
-	public TMP_Text waveCounter;
-	public TMP_Text waveTimer;
-
-	public bool active;
-
-	private float _timeUntilWave = 5.0f;
-	private int _waveCount;
-
-	private static Transform[] _markerList;
-	
-	public static Transform[] GetMarkerList()
+	public class WaveSpawner : MonoBehaviour
 	{
-		return _markerList;
-	}
+		public static bool IsReset = false;
+	
+		[Header("Numeric Modifiers")]
+		public int totalWaves;
+		public float waveDelay = 5.0f;
+		public float timeBetweenEnemies = 0.5f;
+	
+		[Header("Object References")]
+		public GameObject enemyPrefab;
+		public Transform enemySpawn;
 
-	public void ResetWaveSpawner()
-	{
-		_timeUntilWave = 5.0f;
-		_waveCount = 0;
-		isReset = true;
-	}
+		[Header("UI Fields")] 
+		public TMP_Text waveCounter;
+		public TMP_Text waveTimer;
 
-	private void Awake()
-	{
-		_markerList = new Transform[transform.childCount];
+		public bool active;
 
-		for (int i = 0; i < transform.childCount; i++)
+		private float _timeUntilWave = 5.0f;
+		private int _waveCount;
+
+		private static Transform[] _markerList;
+	
+		public static Transform[] GetMarkerList()
 		{
-			_markerList[i] = transform.GetChild(i);
+			return _markerList;
 		}
-	}
 
-	private void Update()
-	{
-		active = !Dialogue.IsEnabled;
-		
-		if (active)
+		public void ResetWaveSpawner()
 		{
-			if (_timeUntilWave <= 0)
+			_timeUntilWave = 5.0f;
+			_waveCount = 0;
+			IsReset = true;
+		}
+
+		private void Awake()
+		{
+			_markerList = new Transform[transform.childCount];
+
+			for (int i = 0; i < transform.childCount; i++)
 			{
-				isReset = false;
-				
-				if (_waveCount < totalWaves || totalWaves == 0)
+				_markerList[i] = transform.GetChild(i);
+			}
+		}
+
+		private void Update()
+		{
+			active = !Dialogue.IsEnabled;
+		
+			if (active)
+			{
+				if (_timeUntilWave <= 0)
 				{
-					_timeUntilWave = waveDelay;
-					_waveCount++;
+					IsReset = false;
 				
-					StartCoroutine(SpawnEnemies((int) Mathf.Pow(_waveCount, 1.05f) + 1));
+					if (_waveCount < totalWaves || totalWaves == 0)
+					{
+						_timeUntilWave = waveDelay;
+						_waveCount++;
+				
+						StartCoroutine(SpawnEnemies((int) Mathf.Pow(_waveCount, 1.05f) + 1));
+					}
 				}
+
+				_timeUntilWave -= Time.deltaTime;
 			}
 
-			_timeUntilWave -= Time.deltaTime;
+			String waves = (totalWaves > 0) ? totalWaves.ToString() : "∞";
+			waveCounter.text = $"{Localisation.GetString(StringType.UIWaveCounter)}: {_waveCount} / {waves}";
+			waveTimer.text = $"{Localisation.GetString(StringType.UIWaveTimer)}: {Mathf.RoundToInt(_timeUntilWave)} {Localisation.GetString(StringType.UIWaveSeconds)}";
 		}
 
-		String waves = (totalWaves > 0) ? totalWaves.ToString() : "∞";
-		waveCounter.text = $"Wave: {_waveCount} / {waves}";
-		waveTimer.text = $"Next wave in: {Mathf.RoundToInt(_timeUntilWave)} sec(s)";
-	}
-
-	IEnumerator SpawnEnemies(int count)
-	{
-		for (int i = 0; i < count; i++)
+		IEnumerator SpawnEnemies(int count)
 		{
-			Instantiate(enemyPrefab, enemySpawn.position, Quaternion.identity);
-			yield return new WaitForSeconds(timeBetweenEnemies);
+			for (int i = 0; i < count; i++)
+			{
+				Instantiate(enemyPrefab, enemySpawn.position, Quaternion.identity);
+				yield return new WaitForSeconds(timeBetweenEnemies);
+			}
 		}
 	}
 }
