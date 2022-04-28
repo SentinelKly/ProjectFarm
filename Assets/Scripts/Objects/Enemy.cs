@@ -1,47 +1,50 @@
 using UnityEngine;
 
-public class Enemy : MonoBehaviour
+namespace Objects
 {
-    public float speed = 10.0f;
-
-    private Transform _currentMarker;
-    private Vector3 _direction;
-    private int _mIndex;
-
-    private void ChangeMarker()
+    public class Enemy : MonoBehaviour
     {
-        _mIndex ++;
+        public float speed = 10.0f;
 
-        _currentMarker = WaveSpawner.GetMarkerList()[_mIndex];
-        _direction = _currentMarker.position - transform.position;
-        _direction.Normalize();
+        private Transform _currentMarker;
+        private Vector3 _direction;
+        private int _mIndex;
 
-        transform.rotation = Quaternion.LookRotation(_direction);
-    }
-
-    private void Start()
-    {
-        ChangeMarker();
-    }
-
-    private void Update()
-    {
-        if (WaveSpawner.isReset) Destroy(gameObject);
-        
-        transform.Translate(_direction * (speed * Time.deltaTime), Space.World);
-
-        if (Vector3.Distance(transform.position, _currentMarker.position) < 0.3f)
+        private void ChangeMarker()
         {
-            if (_mIndex < WaveSpawner.GetMarkerList().Length - 1)
-                ChangeMarker();
+            _mIndex ++;
 
-            else
+            _currentMarker = WaveSpawner.GetMarkerList()[_mIndex];
+            _direction = _currentMarker.position - transform.position;
+            _direction.Normalize();
+
+            transform.rotation = Quaternion.LookRotation(_direction);
+        }
+
+        private void Start()
+        {
+            ChangeMarker();
+        }
+
+        private void Update()
+        {
+            if (WaveSpawner.isReset) Destroy(gameObject);
+        
+            transform.Translate(_direction * (speed * Time.deltaTime), Space.World);
+
+            if (Vector3.Distance(transform.position, _currentMarker.position) < 0.3f)
             {
-                var levelObject = GameObject.FindWithTag("Player");
-                var controller = levelObject.GetComponent<LevelController>();
-                controller.DealDamage(15f);
+                if (_mIndex < WaveSpawner.GetMarkerList().Length - 1)
+                    ChangeMarker();
+
+                else
+                {
+                    var levelObject = GameObject.FindWithTag("Player");
+                    var controller = levelObject.GetComponent<LevelController>();
+                    controller.DealDamage(15f);
                 
-                Destroy(gameObject);
+                    Destroy(gameObject);
+                }
             }
         }
     }
