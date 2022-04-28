@@ -5,7 +5,7 @@ namespace Objects
 	public class Bullet : MonoBehaviour
 	{
 		private Transform _target;
-		private float _speed = 20f;
+		private float _speed;
 		private bool _active;
 
 		public void SetParams(Transform target, float speed)

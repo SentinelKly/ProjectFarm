@@ -4,9 +4,13 @@ namespace Objects
 {
 	public class CropWeapon : MonoBehaviour
 	{
+		[Header("Reference Objects")]
 		public GameObject bulletPrefab;
 		public Transform bulletSpawner;
+		
+		[Header("Speed Modifiers")]
 		public float rateOfFire = 1f;
+		public float projectileSpeed = 30f;
 		
 		private float _fireDelay;
 		private EnemySeeker _seeker;
@@ -36,7 +40,7 @@ namespace Objects
 		{
 			var bulletObj = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
 			var bullet = bulletObj.GetComponent<Bullet>();
-			bullet.SetParams(_target.transform, 30f);
+			bullet.SetParams(_target.transform, projectileSpeed);
 		}
 	}
 }

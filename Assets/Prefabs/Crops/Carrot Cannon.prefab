@@ -498,7 +498,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRange: 15
-  lockOnSpeed: 8
+  lockOnSpeed: 10
 --- !u!114 &3574221755085105000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -514,3 +514,4 @@ MonoBehaviour:
   bulletPrefab: {fileID: 6178842122525705883, guid: c788826113a722541a7f1100b15f26c2, type: 3}
   bulletSpawner: {fileID: 1553651591089609307}
   rateOfFire: 1.5
+  projectileSpeed: 20

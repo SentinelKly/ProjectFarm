@@ -245,7 +245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetRange: 15
-  lockOnSpeed: 8
+  lockOnSpeed: 10
 --- !u!114 &5330849674098116221
 MonoBehaviour:
   m_ObjectHideFlags: 0
