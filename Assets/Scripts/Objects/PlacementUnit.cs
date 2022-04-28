@@ -10,10 +10,13 @@ namespace Objects
 		private Material _plotMaterial;
 		private Color _defaultColour;
 		private GameObject _currentCrop;
+		
 		private bool _planted;
+		private float _randomRot;
 
 		private void Start()
 		{
+			_randomRot = Random.Range(1.0f, 360.0f);
 			_plotMaterial = gameObject.GetComponent<Renderer>().material;
 			_defaultColour = _plotMaterial.GetColor(Color1);
 		}
@@ -22,7 +25,7 @@ namespace Objects
 		{
 			if (!_planted)
 			{
-				_currentCrop = Instantiate(turret, transform.position, Quaternion.LookRotation(new Vector3(0, 0, 0)));
+				_currentCrop = Instantiate(turret, transform.position, Quaternion.Euler(0f, _randomRot, 0f));
 				_currentCrop.transform.Translate(0f, 1.85f, 0f, Space.Self);
 				_planted = true;
 			}

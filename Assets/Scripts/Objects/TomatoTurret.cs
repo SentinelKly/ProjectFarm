@@ -11,7 +11,7 @@ namespace Objects
 		public float rateOfFire = 1f;
 
 		private GameObject _currentTarget;
-		private float _fireDelay = 0f;
+		private float _fireDelay;
 
 		private void Start()
 		{
