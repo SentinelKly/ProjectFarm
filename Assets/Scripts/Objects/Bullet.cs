@@ -30,7 +30,8 @@ namespace Objects
 
 				if (direction.magnitude <= 1f)
 				{
-					Destroy(_target.gameObject);
+					var enemy = _target.GetComponent<Enemy>();
+					enemy.TakeDamage();
 				}
 			
 				transform.Translate(direction * movement, Space.World);

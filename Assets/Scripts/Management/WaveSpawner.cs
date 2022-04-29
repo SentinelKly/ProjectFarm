@@ -9,7 +9,7 @@ namespace Management
 {
 	public class WaveSpawner : MonoBehaviour
 	{
-		public static bool IsReset = false;
+		public static bool IsReset;
 	
 		[Header("Numeric Modifiers")]
 		public int totalWaves;
@@ -75,7 +75,7 @@ namespace Management
 				_timeUntilWave -= Time.deltaTime;
 			}
 
-			String waves = (totalWaves > 0) ? totalWaves.ToString() : "∞";
+			String waves = (totalWaves > 0) ? totalWaves.ToString() : "infinity";
 			waveCounter.text = $"{Localisation.GetString(StringType.UIWaveCounter)}: {_waveCount} / {waves}";
 			waveTimer.text = $"{Localisation.GetString(StringType.UIWaveTimer)}: {Mathf.RoundToInt(_timeUntilWave)} {Localisation.GetString(StringType.UIWaveSeconds)}";
 		}

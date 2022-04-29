@@ -134,6 +134,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 67be97d01f7240741b766d12fabf6b32, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bloodSplatter: {fileID: 8259904063361570233, guid: ec240398538be2a4f83ee82af61664e2, type: 3}
   speed: 15
 --- !u!1 &3377767980442287238
 GameObject:

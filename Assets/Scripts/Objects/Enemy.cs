@@ -5,11 +5,22 @@ namespace Objects
 {
     public class Enemy : MonoBehaviour
     {
+        public GameObject bloodSplatter;
         public float speed = 10.0f;
 
         private Transform _currentMarker;
         private Vector3 _direction;
         private int _mIndex;
+
+        public void TakeDamage()
+        {
+            var position = transform.position;
+            var bloodPos = new Vector3(position.x, 0.12f, position.z);
+            var randomRot = Random.Range(1.0f, 360.0f);
+            
+            Instantiate(bloodSplatter, bloodPos, Quaternion.Euler(0f, randomRot, 0f));
+            Destroy(gameObject);
+        }
 
         private void ChangeMarker()
         {
@@ -43,7 +54,7 @@ namespace Objects
                     var levelObject = GameObject.FindWithTag("Player");
                     var controller = levelObject.GetComponent<LevelController>();
                     controller.DealDamage(15f);
-                
+                    
                     Destroy(gameObject);
                 }
             }

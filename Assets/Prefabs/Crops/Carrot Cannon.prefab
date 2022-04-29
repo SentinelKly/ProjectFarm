@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 5824306153888184380}
   - component: {fileID: 490949976674073345}
   m_Layer: 0
-  m_Name: Gun (1)
+  m_Name: Gun Muzzle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -31,7 +31,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7203456436509849718}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 75}
 --- !u!33 &5824306153888184380
 MeshFilter:
@@ -278,7 +278,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7203456436509849718}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3770191678402426213
 GameObject:
@@ -564,8 +564,8 @@ Transform:
   - {fileID: 8703154980862318723}
   - {fileID: 1918658099458440232}
   - {fileID: 9210031913606079843}
-  - {fileID: 1553651591089609307}
   - {fileID: 7388343638735763347}
+  - {fileID: 1553651591089609307}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
