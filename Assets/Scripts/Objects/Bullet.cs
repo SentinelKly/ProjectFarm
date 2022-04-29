@@ -2,13 +2,13 @@ using UnityEngine;
 
 namespace Objects
 {
-	public class Bullet : MonoBehaviour
+	public class Bullet : MonoBehaviour, IProjectile
 	{
 		private Transform _target;
 		private float _speed;
 		private bool _active;
 
-		public void SetParams(Transform target, float speed)
+		public void LaunchProjectile(Transform target, float speed)
 		{
 			_target = target;
 			_speed = speed;

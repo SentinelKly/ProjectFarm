@@ -39,8 +39,8 @@ namespace Objects
 		private void FireAtEnemy()
 		{
 			var bulletObj = Instantiate(bulletPrefab, bulletSpawner.position, Quaternion.identity);
-			var bullet = bulletObj.GetComponent<Bullet>();
-			bullet.SetParams(_target.transform, projectileSpeed);
+			var bullet = bulletObj.GetComponent<IProjectile>();
+			bullet.LaunchProjectile(_target.transform, projectileSpeed);
 		}
 	}
 }
