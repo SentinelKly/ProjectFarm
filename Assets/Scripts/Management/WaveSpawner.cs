@@ -75,7 +75,7 @@ namespace Management
 				_timeUntilWave -= Time.deltaTime;
 			}
 
-			String waves = (totalWaves > 0) ? totalWaves.ToString() : "infinity";
+			String waves = (totalWaves > 0) ? totalWaves.ToString() : Localisation.GetString(StringType.UIInfiniteWave);
 			waveCounter.text = $"{Localisation.GetString(StringType.UIWaveCounter)}: {_waveCount} / {waves}";
 			waveTimer.text = $"{Localisation.GetString(StringType.UIWaveTimer)}: {Mathf.RoundToInt(_timeUntilWave)} {Localisation.GetString(StringType.UIWaveSeconds)}";
 		}

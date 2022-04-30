@@ -6,12 +6,14 @@ namespace Rendering
 {
 	public class ScaleAspect : MonoBehaviour
 	{
+		[Header("Render Target Scaling")]
 		public RawImage renderImage;
 		public float downScaler = 3f;
-	
+
 		private Camera _renderCamera;
 		private RenderTexture _renderTex;
-		private void Start()
+
+		public void UpdateScale()
 		{
 			System.Diagnostics.Debug.Assert(Camera.main != null, "Camera.main != null");
 
@@ -28,7 +30,7 @@ namespace Rendering
 			var resolution = Screen.currentResolution;
 			var renderX = resolution.width / downScaler;
 			var renderY = resolution.height / downScaler;
-
+			
 			_renderTex = new RenderTexture(Mathf.RoundToInt(renderX), Mathf.RoundToInt(renderY), 32, GraphicsFormat.R8G8B8A8_UNorm)
 			{
 				antiAliasing = 1,
@@ -41,6 +43,11 @@ namespace Rendering
 			_renderCamera.targetTexture = _renderTex;
 		
 			renderImage.texture = _renderTex;
+		}
+		
+		private void Start()
+		{
+			UpdateScale();
 		}
 	}
 }

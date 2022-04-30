@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8795398173318189290}
   - component: {fileID: 8795398173318189269}
   - component: {fileID: 8795398173318189289}
+  - component: {fileID: 8162352900175407100}
   m_Layer: 0
   m_Name: Crop Plot
   m_TagString: Untagged
@@ -111,3 +112,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   turret: {fileID: 3007815639606080116, guid: 67ab8ed84c530d2458d1f12a48abaeed, type: 3}
+--- !u!114 &8162352900175407100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8795398173318189268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 00dda72a50ada9c48ba2d87cf0b48167, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  selectionColor: {r: 0, g: 1, b: 0, a: 0}
+  targetChildren: 0

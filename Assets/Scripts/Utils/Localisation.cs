@@ -4,7 +4,7 @@ namespace Utils
 {
     public enum StringType
     {
-        MenuLabelTitle, MenuButtonNewGame, MenuButtonExitGame, UIWaveCounter, UIWaveTimer, UIWaveSeconds
+        MenuLabelTitle, MenuButtonNewGame, MenuButtonExitGame, UIWaveCounter, UIWaveTimer, UIInfiniteWave, UIWaveSeconds
     }
 
     public enum LangType
@@ -18,7 +18,7 @@ namespace Utils
 
         private static readonly string[] TextFieldEnglish =
         {
-            "Project Farm", "New Game", "Exit Game", "Wave", "Next Wave In", "Sec(s)"
+            "Project Farm", "New Game", "Exit Game", "Wave", "Next Wave In", "infinity", "Sec(s)"
         };
 
         private static readonly string[] TextFieldSpanish =
