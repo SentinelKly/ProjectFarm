@@ -298,7 +298,7 @@ MonoBehaviour:
   m_BlockingObjects: 0
   m_BlockingMask:
     serializedVersion: 2
-    m_Bits: 32
+    m_Bits: 2147483647
 --- !u!114 &49812321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1786,7 +1786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 94625796284167923, guid: 7604d31f5a2e521459a4a7b663b1bbbe, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 1000
+      value: 725.4092
       objectReference: {fileID: 0}
     - target: {fileID: 94625796284167923, guid: 7604d31f5a2e521459a4a7b663b1bbbe, type: 3}
       propertyPath: m_SizeDelta.y
@@ -1822,7 +1822,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 94625796284167923, guid: 7604d31f5a2e521459a4a7b663b1bbbe, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: -8.7753
       objectReference: {fileID: 0}
     - target: {fileID: 94625796284167923, guid: 7604d31f5a2e521459a4a7b663b1bbbe, type: 3}
       propertyPath: m_AnchoredPosition.y
@@ -4151,6 +4151,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 807212026}
     m_Modifications:
+    - target: {fileID: 5596585477002328457, guid: a5b86a21e8e68d2448c507bbbe9f46fa, type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596585477002328457, guid: a5b86a21e8e68d2448c507bbbe9f46fa, type: 3}
+      propertyPath: cropPrefab
+      value: 
+      objectReference: {fileID: 7203456436509849713, guid: ae0ad20cdff8cac4c8f6c0fe1ffc364c, type: 3}
+    - target: {fileID: 5596585477002328457, guid: a5b86a21e8e68d2448c507bbbe9f46fa, type: 3}
+      propertyPath: enabledName
+      value: Carrot Cannon
+      objectReference: {fileID: 0}
     - target: {fileID: 8786377843189358144, guid: a5b86a21e8e68d2448c507bbbe9f46fa, type: 3}
       propertyPath: m_Name
       value: Crop Element (1)
@@ -6013,6 +6025,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2260975032851889794, guid: 4ad70203a5787084c877399840f1bb74, type: 3}
+      propertyPath: isEnabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2260975032851889794, guid: 4ad70203a5787084c877399840f1bb74, type: 3}
+      propertyPath: selectionColor.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5532427792654326878, guid: 4ad70203a5787084c877399840f1bb74, type: 3}
       propertyPath: m_RootOrder
       value: 6
@@ -6127,6 +6147,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 807212026}
     m_Modifications:
+    - target: {fileID: 5596585477002328457, guid: a5b86a21e8e68d2448c507bbbe9f46fa, type: 3}
+      propertyPath: isLocked
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5596585477002328457, guid: a5b86a21e8e68d2448c507bbbe9f46fa, type: 3}
+      propertyPath: enabledName
+      value: Tomato Turret
+      objectReference: {fileID: 0}
     - target: {fileID: 8786377843189358144, guid: a5b86a21e8e68d2448c507bbbe9f46fa, type: 3}
       propertyPath: m_Name
       value: Crop Element

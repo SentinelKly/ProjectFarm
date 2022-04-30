@@ -9,6 +9,8 @@ TagManager:
   - DialogueImage
   - DialogueSpeaker
   - DialogueText
+  - Icon
+  - Name
   layers:
   - Default
   - TransparentFX

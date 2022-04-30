@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8786377843189358147}
   - component: {fileID: 8786377843189358149}
   - component: {fileID: 8786377843189358146}
+  - component: {fileID: 5596585477002328457}
   m_Layer: 5
   m_Name: Crop Element
   m_TagString: Untagged
@@ -78,6 +79,26 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!114 &5596585477002328457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8786377843189358144}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 438f11f87c35a2d4eb0d6a31335e9a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cropPrefab: {fileID: 3007815639606080116, guid: 67ab8ed84c530d2458d1f12a48abaeed, type: 3}
+  title: {fileID: 8786377844119113359}
+  icon: {fileID: 8786377844360909012}
+  isLocked: 1
+  enabledName: Crop Name Here
+  enabledIcon: {fileID: 21300000, guid: 4b33c136840929f4fa694a0e1ff5329b, type: 3}
+  lockedName: Locked
+  lockedIcon: {fileID: 21300000, guid: 8333cb06b646b9442987e21d295786b8, type: 3}
 --- !u!1 &8786377844119113357
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,7 +5,7 @@ namespace Utils
     public class Highlighter : MonoBehaviour
     {
         public Color selectionColor;
-        public bool targetChildren;
+        public bool targetChildren, isEnabled = true;
 
         private Renderer _parentRenderer;
         private Color _parentColour;
@@ -38,6 +38,8 @@ namespace Utils
 
         private void OnMouseOver()
         {
+            if (!isEnabled) return;
+            
             if (_parentRenderer != null)
                 _parentRenderer.material.color = selectionColor;
             
