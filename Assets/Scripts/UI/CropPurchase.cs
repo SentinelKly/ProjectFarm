@@ -9,6 +9,7 @@ namespace UI
     {
         [Header("Crop Placement")]
         public GameObject cropPrefab;
+        public Texture2D cursorTexture;
 
         [Header("UI Properties")]
         public TMP_Text title;
@@ -53,6 +54,8 @@ namespace UI
             
             DraggingCrop = true;
             _cropPrefab = cropPrefab;
+            
+            Cursor.SetCursor(cursorTexture, Vector2.zero, CursorMode.Auto);
         }
 
         private void Start()
@@ -78,6 +81,8 @@ namespace UI
             {
                 DraggingCrop = false;
                 _cropPrefab = null;
+                
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto); 
             }
         }
     }
