@@ -1,2 +1,2 @@
-Assets/TextMesh_Pro/* linguist-vendored
-.shader linguist-vendored=true
+* linguist-vendored
+*.cs linguist-vendored=false
